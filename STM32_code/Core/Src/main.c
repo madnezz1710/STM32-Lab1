@@ -61,6 +61,7 @@ static void MX_GPIO_Init(void);
   * @brief  The application entry point.
   * @retval int
   */
+
 void clearAllClock () {
 	  HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, 0);
 	  HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, 0);
@@ -105,6 +106,36 @@ void setNumberOnClock(int num){
 			clearAllClock();
 	}
 }
+void clearNumberOnClock(int num){
+	switch(num){
+	case 0: HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, 0);
+			break;
+	case 1: HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, 0);
+			break;
+	case 2: HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, 0);
+			break;
+	case 3: HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, 0);
+			break;
+	case 4: HAL_GPIO_WritePin(LED_5_GPIO_Port, LED_5_Pin, 0);
+			break;
+	case 5: HAL_GPIO_WritePin(LED_6_GPIO_Port, LED_6_Pin, 0);
+			break;
+	case 6: HAL_GPIO_WritePin(LED_7_GPIO_Port, LED_7_Pin, 0);
+			break;
+	case 7: HAL_GPIO_WritePin(LED_8_GPIO_Port, LED_8_Pin, 0);
+			break;
+	case 8: HAL_GPIO_WritePin(LED_9_GPIO_Port, LED_9_Pin, 0);
+			break;
+	case 9: HAL_GPIO_WritePin(LED_10_GPIO_Port, LED_10_Pin, 0);
+			break;
+	case 10: HAL_GPIO_WritePin(LED_11_GPIO_Port, LED_11_Pin, 0);
+			break;
+	case 11: HAL_GPIO_WritePin(LED_12_GPIO_Port, LED_12_Pin, 0);
+			break;
+	default:
+			clearAllClock();
+	}
+}
 int main(void)
 {
   /* USER CODE BEGIN 1 */
@@ -142,6 +173,8 @@ int main(void)
 	  HAL_Delay(1000);
 	  setNumberOnClock(9);
 	  	  HAL_Delay(1000);
+	  clearNumberOnClock(3);
+	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
