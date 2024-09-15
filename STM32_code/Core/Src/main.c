@@ -166,15 +166,45 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  int minute=0;
+  int hour=6;
+  int second=0;
+  int s_second=0;
+  int s_minute=8;
   while (1)
   {
+	  for(int o=1;o<=3600;o++){
+		  clearNumberOnClock(second);
+		  second++;
+			  if(second==12){
+				  s_second++;
+				  second=0;
 
-	  setNumberOnClock(3);
-	  HAL_Delay(1000);
-	  setNumberOnClock(9);
-	  	  HAL_Delay(1000);
-	  clearNumberOnClock(3);
-	  HAL_Delay(1000);
+			  }
+			  if(s_second==5){
+				  s_second=0;
+				  minute++;
+				  if(minute==5){
+				 			  clearNumberOnClock(s_minute);
+				 			  	s_minute++;
+				 			  	 minute=0;
+				 			  	 if(s_minute==12){
+				 			  					  clearNumberOnClock(hour);
+				 			  					  s_minute=0;
+				 			  					  hour++;
+
+
+				 			  				  }
+				 			  				  }
+			  }
+
+
+			  setNumberOnClock(hour);
+			  setNumberOnClock(s_minute);
+			  setNumberOnClock(second);
+			  HAL_Delay(100);
+			  }
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
