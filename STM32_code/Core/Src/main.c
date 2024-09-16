@@ -135,12 +135,15 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  int i=0;
   while (1)
   {
-
-	  setNumberOnClock(3);
-	  HAL_Delay(1000);
-	  setNumberOnClock(9);
+	  if(i==13){
+		  i=0;
+	  clearAllClock();
+	  }
+	  setNumberOnClock(i);
+	  i++;
 	  	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
