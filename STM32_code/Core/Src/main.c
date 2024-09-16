@@ -62,7 +62,8 @@ static void MX_GPIO_Init(void);
   * @retval int
   */
 void display7SEG(int num){
-	if(num==0){
+	switch(num){
+	case 0:
 		HAL_GPIO_WritePin(SEG_0_GPIO_Port, SEG_0_Pin,0);
 		HAL_GPIO_WritePin(SEG_1_GPIO_Port, SEG_1_Pin,0);
 		HAL_GPIO_WritePin(SEG_2_GPIO_Port, SEG_2_Pin,0);
@@ -70,8 +71,9 @@ void display7SEG(int num){
 		HAL_GPIO_WritePin(SEG_4_GPIO_Port, SEG_4_Pin,0);
 		HAL_GPIO_WritePin(SEG_5_GPIO_Port, SEG_5_Pin,0);
 		HAL_GPIO_WritePin(SEG_6_GPIO_Port, SEG_6_Pin,1);
-	}
-	else if(num==1){
+		break;
+
+		case 1:
 		HAL_GPIO_WritePin(SEG_0_GPIO_Port, SEG_0_Pin,1);
 		HAL_GPIO_WritePin(SEG_1_GPIO_Port, SEG_1_Pin,0);
 		HAL_GPIO_WritePin(SEG_2_GPIO_Port, SEG_2_Pin,0);
@@ -79,8 +81,9 @@ void display7SEG(int num){
 		HAL_GPIO_WritePin(SEG_4_GPIO_Port, SEG_4_Pin,1);
 		HAL_GPIO_WritePin(SEG_5_GPIO_Port, SEG_5_Pin,1);
 		HAL_GPIO_WritePin(SEG_6_GPIO_Port, SEG_6_Pin,1);
-	}
-	else if(num==2){
+		break;
+
+		case 2:
 		HAL_GPIO_WritePin(SEG_0_GPIO_Port, SEG_0_Pin,0);
 		HAL_GPIO_WritePin(SEG_1_GPIO_Port, SEG_1_Pin,0);
 		HAL_GPIO_WritePin(SEG_2_GPIO_Port, SEG_2_Pin,1);
@@ -88,8 +91,8 @@ void display7SEG(int num){
 		HAL_GPIO_WritePin(SEG_4_GPIO_Port, SEG_4_Pin,0);
 		HAL_GPIO_WritePin(SEG_5_GPIO_Port, SEG_5_Pin,1);
 		HAL_GPIO_WritePin(SEG_6_GPIO_Port, SEG_6_Pin,0);
-	}
-	else if(num==3){
+		break;
+		case 3:
 		HAL_GPIO_WritePin(SEG_0_GPIO_Port, SEG_0_Pin,0);
 		HAL_GPIO_WritePin(SEG_1_GPIO_Port, SEG_1_Pin,0);
 		HAL_GPIO_WritePin(SEG_2_GPIO_Port, SEG_2_Pin,0);
@@ -97,8 +100,8 @@ void display7SEG(int num){
 		HAL_GPIO_WritePin(SEG_4_GPIO_Port, SEG_4_Pin,1);
 		HAL_GPIO_WritePin(SEG_5_GPIO_Port, SEG_5_Pin,1);
 		HAL_GPIO_WritePin(SEG_6_GPIO_Port, SEG_6_Pin,0);
-	}
-	else if(num==4){
+		break;
+		case 4:
 		HAL_GPIO_WritePin(SEG_0_GPIO_Port, SEG_0_Pin,1);
 		HAL_GPIO_WritePin(SEG_1_GPIO_Port, SEG_1_Pin,0);
 		HAL_GPIO_WritePin(SEG_2_GPIO_Port, SEG_2_Pin,0);
@@ -106,8 +109,8 @@ void display7SEG(int num){
 		HAL_GPIO_WritePin(SEG_4_GPIO_Port, SEG_4_Pin,1);
 		HAL_GPIO_WritePin(SEG_5_GPIO_Port, SEG_5_Pin,0);
 		HAL_GPIO_WritePin(SEG_6_GPIO_Port, SEG_6_Pin,0);
-	}
-	else if(num==5){
+		break;
+		case 5:
 		HAL_GPIO_WritePin(SEG_0_GPIO_Port, SEG_0_Pin,0);
 		HAL_GPIO_WritePin(SEG_1_GPIO_Port, SEG_1_Pin,1);
 		HAL_GPIO_WritePin(SEG_2_GPIO_Port, SEG_2_Pin,0);
@@ -115,8 +118,8 @@ void display7SEG(int num){
 		HAL_GPIO_WritePin(SEG_4_GPIO_Port, SEG_4_Pin,1);
 		HAL_GPIO_WritePin(SEG_5_GPIO_Port, SEG_5_Pin,0);
 		HAL_GPIO_WritePin(SEG_6_GPIO_Port, SEG_6_Pin,0);
-	}
-	else if(num==6){
+		break;
+		case 6:
 		HAL_GPIO_WritePin(SEG_0_GPIO_Port, SEG_0_Pin,0);
 		HAL_GPIO_WritePin(SEG_1_GPIO_Port, SEG_1_Pin,1);
 		HAL_GPIO_WritePin(SEG_2_GPIO_Port, SEG_2_Pin,0);
@@ -124,8 +127,8 @@ void display7SEG(int num){
 		HAL_GPIO_WritePin(SEG_4_GPIO_Port, SEG_4_Pin,0);
 		HAL_GPIO_WritePin(SEG_5_GPIO_Port, SEG_5_Pin,0);
 		HAL_GPIO_WritePin(SEG_6_GPIO_Port, SEG_6_Pin,0);
-	}
-	else if(num==7){
+		break;
+		case 7:
 		HAL_GPIO_WritePin(SEG_0_GPIO_Port, SEG_0_Pin,0);
 		HAL_GPIO_WritePin(SEG_1_GPIO_Port, SEG_1_Pin,0);
 		HAL_GPIO_WritePin(SEG_2_GPIO_Port, SEG_2_Pin,0);
@@ -133,8 +136,8 @@ void display7SEG(int num){
 		HAL_GPIO_WritePin(SEG_4_GPIO_Port, SEG_4_Pin,1);
 		HAL_GPIO_WritePin(SEG_5_GPIO_Port, SEG_5_Pin,1);
 		HAL_GPIO_WritePin(SEG_6_GPIO_Port, SEG_6_Pin,1);
-	}
-	else if(num==8){
+		break;
+		case 8:
 		HAL_GPIO_WritePin(SEG_0_GPIO_Port, SEG_0_Pin,0);
 		HAL_GPIO_WritePin(SEG_1_GPIO_Port, SEG_1_Pin,0);
 		HAL_GPIO_WritePin(SEG_2_GPIO_Port, SEG_2_Pin,0);
@@ -142,8 +145,8 @@ void display7SEG(int num){
 		HAL_GPIO_WritePin(SEG_4_GPIO_Port, SEG_4_Pin,0);
 		HAL_GPIO_WritePin(SEG_5_GPIO_Port, SEG_5_Pin,0);
 		HAL_GPIO_WritePin(SEG_6_GPIO_Port, SEG_6_Pin,0);
-	}
-	else {
+		break;
+		case 9:
 		HAL_GPIO_WritePin(SEG_0_GPIO_Port, SEG_0_Pin,0);
 		HAL_GPIO_WritePin(SEG_1_GPIO_Port, SEG_1_Pin,0);
 		HAL_GPIO_WritePin(SEG_2_GPIO_Port, SEG_2_Pin,0);
@@ -151,9 +154,11 @@ void display7SEG(int num){
 		HAL_GPIO_WritePin(SEG_4_GPIO_Port, SEG_4_Pin,1);
 		HAL_GPIO_WritePin(SEG_5_GPIO_Port, SEG_5_Pin,0);
 		HAL_GPIO_WritePin(SEG_6_GPIO_Port, SEG_6_Pin,0);
-	}
+		break;
+		default:
+			break;
 
-
+}
 }
 int main(void)
 {
