@@ -166,18 +166,34 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  int part=0;
+  int i=0;
   while (1)
   {
+	  switch(part){
+	  case 0:
+	  if(i==12){
+		  i=0;
+		  part=1;
+	  }
+	  else{setNumberOnClock(i);
+	  i++;}
+	  break;
+	  case 1:
+		  if(i==12){
+			  i=0;
+			  part=0;
+		  }
+		  else{
+		  clearNumberOnClock(i);
+		  i++;}
+		  break;
 
-	  setNumberOnClock(3);
-	  HAL_Delay(1000);
-	  setNumberOnClock(9);
-	  	  HAL_Delay(1000);
-	  clearNumberOnClock(3);
-	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+  }
+	  HAL_Delay(1000);
   }
   /* USER CODE END 3 */
 }
