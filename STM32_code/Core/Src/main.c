@@ -103,7 +103,7 @@ void setNumberOnClock(int num){
 	case 11: HAL_GPIO_WritePin(LED_12_GPIO_Port, LED_12_Pin, 1);
 			break;
 	default:
-			clearAllClock();
+			break;
 	}
 }
 void clearNumberOnClock(int num){
@@ -133,7 +133,7 @@ void clearNumberOnClock(int num){
 	case 11: HAL_GPIO_WritePin(LED_12_GPIO_Port, LED_12_Pin, 0);
 			break;
 	default:
-			clearAllClock();
+			break;
 	}
 }
 int main(void)
@@ -170,40 +170,43 @@ int main(void)
   int hour=6;
   int second=0;
   int s_second=0;
-  int s_minute=8;
+  int s_minute=10;
   while (1)
   {
-	  for(int o=1;o<=3600;o++){
-		  clearNumberOnClock(second);
+		  clearNumberOnClock(s_second);
 		  second++;
-			  if(second==12){
-				  s_second++;
+		  	  if(second==4)s_second++;
+			  if(second==5){
 				  second=0;
-
-			  }
-			  if(s_second==5){
-				  s_second=0;
-				  minute++;
-				  if(minute==5){
+				  if(s_second==11){
+					  minute++;
+	  				  if(minute==4){
 				 			  clearNumberOnClock(s_minute);
 				 			  	s_minute++;
-				 			  	 minute=0;
-				 			  	 if(s_minute==12){
-				 			  					  clearNumberOnClock(hour);
-				 			  					  s_minute=0;
-				 			  					  hour++;
+				 			   if(s_minute==11){
+				 			  		clearNumberOnClock(hour);
+				 			  		hour++;
+				 			    	       }
+	  				  }
+				  }
 
-
-				 			  				  }
-				 			  				  }
 			  }
+			  if(s_second==12){
+			  	  s_second=0;
+			  				  	}
+			  if(minute==5){
+			  	 minute=0;
+			  			  	  }
 
+			  if(s_minute==12){
+			  			  s_minute=0;
 
+			  			  }
 			  setNumberOnClock(hour);
 			  setNumberOnClock(s_minute);
-			  setNumberOnClock(second);
-			  HAL_Delay(100);
-			  }
+			  setNumberOnClock(s_second);
+			  HAL_Delay(10);
+
 
     /* USER CODE END WHILE */
 
