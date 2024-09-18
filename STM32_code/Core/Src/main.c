@@ -181,12 +181,12 @@ int main(void)
 				  if(s_second==11){
 					  minute++;
 	  				  if(minute==4){
-				 			  clearNumberOnClock(s_minute);
-				 			  	s_minute++;
-				 			   if(s_minute==11){
-				 			  		clearNumberOnClock(hour);
-				 			  		hour++;
-				 			    	       }
+		 			  clearNumberOnClock(s_minute);
+					  	s_minute++;
+			 		   if(s_minute==11){
+				  		clearNumberOnClock(hour);
+				   		hour++;
+				 	     }
 	  				  }
 				  }
 
