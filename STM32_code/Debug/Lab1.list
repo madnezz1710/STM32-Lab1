@@ -403,25 +403,25 @@ int main(void)
  8000388:	697b      	ldr	r3, [r7, #20]
  800038a:	2b04      	cmp	r3, #4
  800038c:	d10e      	bne.n	80003ac <main+0x78>
-				 			  clearNumberOnClock(s_minute);
+		 			  clearNumberOnClock(s_minute);
  800038e:	6878      	ldr	r0, [r7, #4]
  8000390:	f7ff ff56 	bl	8000240 <clearNumberOnClock>
-				 			  	s_minute++;
+					  	s_minute++;
  8000394:	687b      	ldr	r3, [r7, #4]
  8000396:	3301      	adds	r3, #1
  8000398:	607b      	str	r3, [r7, #4]
-				 			   if(s_minute==11){
+			 		   if(s_minute==11){
  800039a:	687b      	ldr	r3, [r7, #4]
  800039c:	2b0b      	cmp	r3, #11
  800039e:	d105      	bne.n	80003ac <main+0x78>
-				 			  		clearNumberOnClock(hour);
+				  		clearNumberOnClock(hour);
  80003a0:	6938      	ldr	r0, [r7, #16]
  80003a2:	f7ff ff4d 	bl	8000240 <clearNumberOnClock>
-				 			  		hour++;
+				   		hour++;
  80003a6:	693b      	ldr	r3, [r7, #16]
  80003a8:	3301      	adds	r3, #1
  80003aa:	613b      	str	r3, [r7, #16]
-				 			    	       }
+				 	     }
 	  				  }
 				  }
 
